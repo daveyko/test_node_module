@@ -1,6 +1,6 @@
 {
   "name": "test_node_module",
-  "version": "1.0.0-develop",
+  "version": "1.0.0-develop.0",
   "description": "",
   "main": "index.js",
   "scripts": {
