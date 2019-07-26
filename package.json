@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "export GITHUB_TOKEN=2ec3f2265537a3335b121972dc9fc0c01807ea11 && release-it major --preRelease=develop"
+    "release": "export GITHUB_TOKEN=f76f86dac86573101bb3814f3cdd8b62fad83575 && release-it major --preRelease=develop"
   },
   "repository": {
     "type": "git",
