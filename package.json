@@ -5,20 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "export GITHUB_TOKEN=b2f6d4c2e29f5b59499e1a486219041c50aaa921 && release-it major --preRelease=develop"
+    "release": "export GITHUB_TOKEN=690d7ae2e45b36d3e0d329efa2b52f524b9785d6 && release-it major --preRelease=develop"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/daveyko/test_node_module.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/daveyko/test_node_module/issues"
-  },
-  "homepage": "https://github.com/daveyko/test_node_module#readme",
+  "author": "daveyko",
+  "license": "MIT",
   "devDependencies": {
-    "release-it": "^12.3.4"
+    "release-it": "12.3.4"
   },
   "release-it": {
     "github": {
