@@ -1,0 +1,14 @@
+# Node
+node_modules
+
+# IDE
+.idea
+
+#env
+.env
+
+# MAC OSX
+.DS_Store
+
+# npm
+npm-debug.log
