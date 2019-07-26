@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "export GITHUB_TOKEN=690d7ae2e45b36d3e0d329efa2b52f524b9785d6 && release-it major --preRelease=develop"
+    "release": "export GITHUB_TOKEN=20b4e572e0091a9a8ec70b82b05343ce741d3e1f && release-it major --preRelease=develop"
   },
   "author": "daveyko",
   "license": "MIT",
