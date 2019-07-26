@@ -1,0 +1,22 @@
+{
+  "name": "test_node_module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daveyko/test_node_module.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daveyko/test_node_module/issues"
+  },
+  "homepage": "https://github.com/daveyko/test_node_module#readme",
+  "devDependencies": {
+    "release-it": "^12.3.4"
+  }
+}
