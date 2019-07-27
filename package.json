@@ -1,0 +1,20 @@
+{
+  "name": "test_node_module_dk",
+  "version": "1.0.0-develop.16",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "release-it major --preRelease=develop"
+  },
+  "author": "daveyko",
+  "license": "MIT",
+  "devDependencies": {
+    "release-it": "12.0.1"
+  },
+  "release-it": {
+    "github": {
+      "release": true
+    }
+  }
+}
