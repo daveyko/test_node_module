@@ -1,12 +1,13 @@
 {
   "name": "test_node_module_dk",
-  "version": "2.1.0-develop.3",
+  "version": "4.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "release:dev": "release-it minor --preRelease=develop",
-    "release:master": "release-it -- major",
+    "release:master-major": "release-it -- major",
+    "release:master": "release-it -- minor",
     "release:prod-support": "release-it minor --preRelease=prod-support"
   },
   "author": "daveyko",
