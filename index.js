@@ -6,6 +6,10 @@ const wat = () => {
     console.log('wat!')
 }
 
+const versionC = () => { 
+    console.log('versionC!')
+}
+
 const featureD = () => { 
     console.log('featured')
 }
@@ -13,5 +17,6 @@ const featureD = () => {
 module.exports = { 
     testFunc, 
     wat, 
+    versionC
     featureD
 }
