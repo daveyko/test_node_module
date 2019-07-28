@@ -14,6 +14,10 @@ const featureD = () => {
     console.log('featured')
 }
 
+const e = () => { 
+    console.log('e')
+}
+
 module.exports = { 
     testFunc, 
     wat, 
