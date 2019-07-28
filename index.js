@@ -18,9 +18,15 @@ const e = () => {
     console.log('e')
 }
 
+
+const g = () => { 
+    console.log('e')
+}
+
 module.exports = { 
     testFunc, 
     wat, 
     versionC
-    featureD
+    featureD, 
+    g
 }
