@@ -10,8 +10,13 @@ const versionC = () => {
     console.log('versionC!')
 }
 
+const featureD = () => { 
+    console.log('featured')
+}
+
 module.exports = { 
     testFunc, 
     wat, 
     versionC
+    featureD
 }
