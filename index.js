@@ -6,7 +6,17 @@ const wat = () => {
     console.log('wat!')
 }
 
+const versionC = () => { 
+    console.log('versionC!')
+}
+
+const featureD = () => { 
+    console.log('featured')
+}
+
 module.exports = { 
     testFunc, 
-    wat
+    wat, 
+    versionC
+    featureD
 }
