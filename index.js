@@ -18,6 +18,9 @@ const e = () => {
     console.log('e')
 }
 
+const f = () => { 
+    console.log('f')
+}
 
 const g = () => { 
     console.log('e')
@@ -28,5 +31,7 @@ module.exports = {
     wat, 
     versionC
     featureD, 
+    e,
+    f
     g
 }
