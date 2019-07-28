@@ -1,10 +1,6 @@
 {
   "name": "test_node_module_dk",
-  "version": "4.9.0-prod-support.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "release:dev": "release-it minor --preRelease=develop",
     "release:master-major": "release-it -- major",
     "release:master": "release-it -- minor",
