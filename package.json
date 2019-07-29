@@ -1,14 +1,16 @@
 {
   "name": "test_node_module_dk",
-  "version": "4.12.0",
+  "version": "4.15.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release:dev": "release-it minor --preRelease=develop",
-    "release:master-major": "release-it -- major",
-    "release:master": "release-it -- minor",
-    "release:prod-support": "release-it minor --preRelease=prod-support"
+    "release:develop": "release-it minor --preRelease=develop",
+    "release:develop:master": "release-it minor",
+    "release:master:develop": "release-it -- major",
+    "release:master:prod-support": "release-it -- minor",
+    "release:prod-support": "release-it minor --preRelease=prod-support",
+    "release:prod-support:master": "release-it minor"
   },
   "author": "daveyko",
   "license": "MIT",
