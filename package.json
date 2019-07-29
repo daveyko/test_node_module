@@ -1,6 +1,6 @@
 {
   "name": "test_node_module_dk",
-  "version": "4.10.0",
+  "version": "4.11.0-prod-support.0",
   "description": "",
   "main": "index.js",
   "scripts": {
