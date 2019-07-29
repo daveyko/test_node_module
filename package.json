@@ -6,11 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "release:develop": "release-it minor --preRelease=develop",
-    "prerelease:develop": "release-it minor",
+    "release:develop:master": "release-it minor",
     "release:master:develop": "release-it -- major",
     "release:master:prod-support": "release-it -- minor",
     "release:prod-support": "release-it minor --preRelease=prod-support",
-    "prerelease:prod-support": "release-it minor"
+    "release:prod-support:master": "release-it minor"
   },
   "author": "daveyko",
   "license": "MIT",
