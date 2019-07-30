@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release:dev": "release-it minor --preRelease=develop",
-    "release:master-major": "release-it -- major",
-    "release:master": "release-it -- minor",
-    "release:prod-support": "release-it minor --preRelease=prod-support"
+    "release:develop": "release-it patch --preRelease=develop",
+    "release:develop:master": "release-it patch",
+    "release:master:develop": "release-it major",
+    "release:master:prod-support": "release-it minor",
+    "release:prod-support": "release-it patch --preRelease=prod-support",
+    "release:prod-support:master": "release-it patch"
   },
   "author": "daveyko",
   "license": "MIT",
