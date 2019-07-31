@@ -13,4 +13,5 @@ token=$(get_token)
 
 echo "token=$token branch=$branch"
 
-echo "$( GITHUB_TOKEN=$token release-it patch --preRelease=$branch --ci)"
+# echo "$( GITHUB_TOKEN=$token release-it patch --preRelease=$branch --ci)"
+echo "$( GITHUB_TOKEN=$token npm run testrelease)"
