@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "./scripts/release.sh",
     "release:premaster": "release-it patch --ci",
-    "release:master": "./scripts/master-release.sh"
+    "release:master": "./scripts/master-release.sh",
+    "testrelease": "release-it patch --preRelease=develop --ci"
   },
   "author": "daveyko",
   "license": "MIT",
