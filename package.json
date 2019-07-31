@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "./scripts/release.sh",
-    "release:premaster": "release-it patch --ci",
+    "release:premaster": "./scripts/premaster-release.sh",
     "release:master": "./scripts/master-release.sh"
   },
   "author": "daveyko",
