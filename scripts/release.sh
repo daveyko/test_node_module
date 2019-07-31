@@ -9,4 +9,4 @@ get_token() {
 
 token=$(get_token)
 
-echo "$( GITHUB_TOKEN="$token" release-it patch --preRelease=$branch --ci)"
+echo "$( GITHUB_TOKEN=$token release-it patch --preRelease=$branch --ci)"
