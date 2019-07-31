@@ -5,6 +5,7 @@ get_token() {
 }
 
 token=$(get_token)
-echo "token=$token branch=$branch"
+echo "token=$token"
+
 
 echo "$( GITHUB_TOKEN=$token release-it patch --preRelease="$branch" --ci)"
