@@ -22,3 +22,4 @@ then
     echo "$(release-it patch --ci)"
 else 
     echo "Please enter a valid branch name: develop, production-support, or hotfix"
+fi
