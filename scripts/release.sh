@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 cd ~/paintzen/test_node_module
+echo "$(whoami)"
+echo "$(pwd)"
 
 branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
 
@@ -9,4 +11,6 @@ get_token() {
 
 token=$(get_token)
 
-echo "$( GITHUB_TOKEN=$token release-it patch --preRelease=$branch --ci)"
+echo "token=$token branch=$branch"
+
+# echo "$( GITHUB_TOKEN=$token release-it patch --preRelease=$branch --ci)"
