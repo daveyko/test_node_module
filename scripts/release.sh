@@ -10,8 +10,6 @@ get_token() {
 }
 
 token=$(get_token)
-token="${opt%\"}"
-token="${temp#\"}"
 
 echo "token=$token branch=$branch"
 
