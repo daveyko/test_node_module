@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-cd ~/Users/davidko/paintzen/test_node_module
+cd ~/paintzen/test_node_module
 
 branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
 
