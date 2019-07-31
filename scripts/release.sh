@@ -1,19 +1,15 @@
 #!/usr/bin/env bash
-cd ~/paintzen/test_node_module
-echo "$(whoami)"
-echo "$(pwd)"
-
 branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
 
 get_token() {
   echo "$(aws ssm get-parameter --name "githubaccesstoken" --query Parameter.Value --region us-east-1)"
 }
 
-token=$(get_token)
-token="${token%\"}"
-token="${token#\"}"
-echo "token=$token branch=$branch"
+tokenQuotes=$(get_token)
+tokenStripSuffixQuotes="${tokenQuotes%\"}"
+token="${tokenStripSuffixQuotes#\"}"
 
-# echo "$( GITHUB_TOKEN=$token release-it patch --preRelease=$branch --ci)"
+echo "githubaccestoken = $token currentbranch = $branch"
+
 export GITHUB_TOKEN=$token
-echo "$(npm run testrelease)"
+echo "$(release-it patch --preRelease=$branch --ci)"
