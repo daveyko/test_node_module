@@ -10,7 +10,8 @@ get_token() {
 }
 
 token=$(get_token)
-
+token="${token%\"}"
+token="${token#\"}"
 echo "token=$token branch=$branch"
 
 # echo "$( GITHUB_TOKEN=$token release-it patch --preRelease=$branch --ci)"
