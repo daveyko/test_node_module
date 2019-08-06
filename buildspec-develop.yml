@@ -1,0 +1,29 @@
+version: 0.2
+
+run-as: root
+
+env:
+
+  parameter-store:
+    GIT_USER: "AS-GIT-USERNAME"
+    GIT_PASS: "AS-GIT-SECURE-PASSWORD"
+    NPM_PASS: "AS-NPM-PASSWORD"
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+    commands:
+      - echo Entered the install phase...
+  pre_build:
+    commands:
+      - echo Entered the pre build phase...
+  build:
+    commands:
+      - echo Entered the build phase...
+      - npm run release
+  post_build:
+    commands:
+      - echo Entered the post build phase...
+      #- rm -Rf node_modules build
+      - echo Done!
