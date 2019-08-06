@@ -5,7 +5,7 @@ run-as: root
 env:
   variables:
     GIT_REPO: "github.com/paintzen/test_node_module.git"
-    BRANCH: "develop"
+    BRANCH: "hotfix"
 
   parameter-store:
     GIT_USER: "AS-GIT-USERNAME"
