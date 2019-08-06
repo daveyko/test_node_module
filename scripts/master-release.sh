@@ -1,7 +1,3 @@
-#read -p "Enter branch to release: " branch
-#branch=$1
-#echo "BRANCH: $branch"
-
 getReleaseType() {
   OUT=`git log -1 --pretty=%B`
   if [[ $OUT =~ "HOTFIX:" ]]
@@ -13,6 +9,7 @@ getReleaseType() {
   else
     TYPE="develop"
   fi
+  echo $TYPE
 }
 
 get_token() {
