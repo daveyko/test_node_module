@@ -23,16 +23,14 @@ phases:
       - git config --global user.email "admin+github@@paintzen.com"
       - git config --global user.name "Paintzen Admin"
       - echo "https://$GIT_USER:$GIT_PASS@github.com" > ~/.git-credentials
-      - git clone https://$GIT_USER:$GIT_PASS@$GIT_REPO tempRepo
-      - cp -Rf tempRepo/.git .
-      - git pull --rebase
-      - git checkout $BRANCH 
+      - git clone -b $BRANCH https://$GIT_USER:$GIT_PASS@$GIT_REPO tempRepo
   pre_build:
     commands:
       - echo Entered the pre build phase...
   build:
     commands:
       - echo Entered the build phase...
+      - cd $CODEBUILD_SRC_DIR/tempRepo
       - npm install
       - npm run release $BRANCH
   post_build:
