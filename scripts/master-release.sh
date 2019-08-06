@@ -1,4 +1,25 @@
+<<<<<<< Updated upstream
 read -p "Enter branch to release: " branch
+=======
+#read -p "Enter branch to release: " branch
+#branch=$1
+#echo "BRANCH: $branch"
+
+getReleaseType() {
+  OUT=`git log -1 --pretty=%B`
+
+  if [[ $OUT =~ "HOTFIX:" ]]
+  then
+    TYPE="hotfix"
+  elif [[ $OUT =~ "PROD-SUPPORT:" ]]
+  then
+    TYPE="prod-support"
+  else
+    TYPE="develop"
+  fi
+  echo $TYPE
+}
+>>>>>>> Stashed changes
 
 get_token() {
   echo "$(aws ssm get-parameter --name "githubaccesstoken" --query Parameter.Value --region us-east-1)"
