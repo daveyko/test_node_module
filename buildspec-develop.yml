@@ -5,6 +5,7 @@ run-as: root
 env:
   variables:
     GIT_REPO: "github.com/paintzen/test_node_module.git"
+    BRANCH: "develop"
 
   parameter-store:
     GIT_USER: "AS-GIT-USERNAME"
@@ -32,7 +33,7 @@ phases:
       - echo Entered the build phase...
       - git branch
       - npm install 
-      - npm run release
+      - npm run release $BRANCH
   post_build:
     commands:
       - echo Entered the post build phase...
