@@ -14,7 +14,14 @@ phases:
     runtime-versions:
       nodejs: 10
     commands:
-      - echo Entered the install phase...
+      - echo Entered the install phase ...
+      - git config --global credential.helper 'store'
+      - echo "https://$GIT_USER:$GIT_PASS@github.com" > ~/.git-credentials
+      - git clone https://$GIT_USER:$GIT_PASS@$TEST_GIT_REPO tempRepo
+      - cd tempRepo
+      - git checkout $CODEBUILD_RESOLVED_SOURCE_VERSION
+      - cd ..
+      - cp -Rf tempRepo/.git .
   pre_build:
     commands:
       - echo Entered the pre build phase...
