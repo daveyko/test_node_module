@@ -29,6 +29,8 @@ phases:
       - git checkout $BRANCH 
       - cd ..
       - cp -Rf tempRepo/.git .
+      - git pull --rebase
+      - git checkout $BRANCH 
   pre_build:
     commands:
       - echo Entered the pre build phase...
