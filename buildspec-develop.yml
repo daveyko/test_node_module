@@ -31,6 +31,7 @@ phases:
       - git push -u origin prod-support
       - cd ..
       - cp -Rf tempRepo/.git .
+      - git status
   pre_build:
     commands:
       - echo Entered the pre build phase...
@@ -38,7 +39,8 @@ phases:
     commands:
       - echo Entered the build phase...
       - git branch
-      - npm install 
+      - npm install
+      - git status 
       - npm run release $BRANCH
   post_build:
     commands:
