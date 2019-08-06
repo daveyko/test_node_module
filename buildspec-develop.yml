@@ -3,6 +3,8 @@ version: 0.2
 run-as: root
 
 env:
+  variables:
+    GIT_REPO: "github.com/paintzen/test_node_module.git"
 
   parameter-store:
     GIT_USER: "AS-GIT-USERNAME"
@@ -17,7 +19,7 @@ phases:
       - echo Entered the install phase ...
       - git config --global credential.helper 'store'
       - echo "https://$GIT_USER:$GIT_PASS@github.com" > ~/.git-credentials
-      - git clone https://$GIT_USER:$GIT_PASS@$TEST_GIT_REPO tempRepo
+      - git clone https://$GIT_USER:$GIT_PASS@$GIT_REPO tempRepo
       - cd tempRepo
       - git checkout $CODEBUILD_RESOLVED_SOURCE_VERSION
       - cd ..
