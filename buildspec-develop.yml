@@ -18,6 +18,7 @@ phases:
       nodejs: 10
     commands:
       - echo Entered the install phase ...
+      - echo "//registry.npmjs.org/:_authToken=$NPM_PASS" >> ~/.npmrc
       - git config --global credential.helper 'store'
       - echo "https://$GIT_USER:$GIT_PASS@github.com" > ~/.git-credentials
       - git clone https://$GIT_USER:$GIT_PASS@$GIT_REPO tempRepo
