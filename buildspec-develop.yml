@@ -22,16 +22,20 @@ phases:
       - echo "https://$GIT_USER:$GIT_PASS@github.com" > ~/.git-credentials
       - git clone https://$GIT_USER:$GIT_PASS@$GIT_REPO tempRepo
       - cd tempRepo
-      - git checkout $CODEBUILD_RESOLVED_SOURCE_VERSION
+      #- git checkout $CODEBUILD_RESOLVED_SOURCE_VERSION
+      - git pull --rebase
       - git checkout develop
       - git checkout hotfix
       - git checkout prod-support
+      - git checkout $BRANCH 
       - git push -u origin develop 
       - git push -u origin hotfix
       - git push -u origin prod-support
       - cd ..
       - cp -Rf tempRepo/.git .
       - git status
+      - git checkout $BRANCH
+      - git pull --rebase
   pre_build:
     commands:
       - echo Entered the pre build phase...
