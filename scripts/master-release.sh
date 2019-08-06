@@ -1,4 +1,19 @@
-read -p "Enter branch to release: " branch
+#read -p "Enter branch to release: " branch
+#branch=$1
+#echo "BRANCH: $branch"
+
+getReleaseType() {
+  OUT=`git log -1 --pretty=%B`
+  if [[ $OUT =~ "HOTFIX:" ]]
+  then
+    TYPE="hotfix"
+  elif [[ $OUT =~ "PROD-SUPPORT:" ]]
+  then
+    TYPE="prod-support"
+  else
+    TYPE="develop"
+  fi
+}
 
 get_token() {
   echo "$(aws ssm get-parameter --name "githubaccesstoken" --query Parameter.Value --region us-east-1)"
@@ -7,6 +22,9 @@ get_token() {
 tokenQuotes=$(get_token)
 tokenStripSuffixQuotes="${tokenQuotes%\"}"
 token="${tokenStripSuffixQuotes#\"}"
+
+branch=$(getReleaseType)
+echo "BRANCH: $branch"
 
 echo "githubaccestoken = $token currentbranch = $branch"
 
