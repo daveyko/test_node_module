@@ -1,6 +1,6 @@
 {
   "name": "test_node_module_dk",
-  "version": "95.0.0",
+  "version": "96.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
