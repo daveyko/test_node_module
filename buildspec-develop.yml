@@ -16,7 +16,6 @@ phases:
   install:
     runtime-versions:
       nodejs: 10
-
     commands:
       - echo Entered the install phase ...
       - echo "//registry.npmjs.org/:_authToken=$NPM_PASS" >> ~/.npmrc
