@@ -1,0 +1,42 @@
+version: 0.2
+
+run-as: root
+
+env:
+  variables:
+    GIT_REPO: "github.com/paintzen/test_node_module.git"
+    BRANCH: "prod-support"
+
+  parameter-store:
+    GIT_USER: "AS-GIT-USERNAME"
+    GIT_PASS: "AS-GIT-SECURE-PASSWORD"
+    NPM_PASS: "AS-NPM-PASSWORD"
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+    commands:
+      - echo Entered the install phase ...
+      - echo "//registry.npmjs.org/:_authToken=$NPM_PASS" >> ~/.npmrc
+      - git config --global credential.helper 'store'
+      - git config --global user.email "admin+github@@paintzen.com"
+      - git config --global user.name "Paintzen Admin"
+      - echo "https://$GIT_USER:$GIT_PASS@github.com" > ~/.git-credentials
+      - git clone -b $BRANCH https://$GIT_USER:$GIT_PASS@$GIT_REPO tempRepo
+      - echo Done!
+  pre_build:
+    commands:
+      - echo Entered the pre build phase...
+      - echo Done!
+  build:
+    commands:
+      - echo Entered the build phase...
+      - cd $CODEBUILD_SRC_DIR/tempRepo
+      - npm install
+      - npm run release $BRANCH
+      - echo Done!
+  post_build:
+    commands:
+      #- rm -Rf node_modules build
+      - echo Done!
