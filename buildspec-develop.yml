@@ -20,7 +20,7 @@ phases:
     commands:
       - echo Entered the install phase ...
       - echo "//registry.npmjs.org/:_authToken=$NPM_PASS" >> ~/.npmrc
-      - npm config set _auth $NPM_PASS && npm config set always-auth=true && npm config set email=$NPM_EMAIL 
+      - npm login --registry=http://registry.npmjs.org --scope@paintzen 
       - git config --global credential.helper 'store'
       - git config --global user.email "admin+github@@paintzen.com"
       - git config --global user.name "Paintzen Admin"
