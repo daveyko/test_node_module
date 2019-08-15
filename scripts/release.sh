@@ -11,7 +11,7 @@ tokenQuotes=$(get_token)
 tokenStripSuffixQuotes="${tokenQuotes%\"}"
 token="${tokenStripSuffixQuotes#\"}"
 
-echo "githubaccestoken = $token currentbranch = $branch"
+#echo "githubaccestoken = $token currentbranch = $branch"
 
 export GITHUB_TOKEN=$token
 echo "$(release-it patch --preRelease=$branch --ci)"
