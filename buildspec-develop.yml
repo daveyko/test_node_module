@@ -19,8 +19,7 @@ phases:
       nodejs: 10
     commands:
       - echo Entered the install phase ...
-      #- echo "//registry.npmjs.org/:_authToken=$NPM_PASS" >> ~/.npmrc
-      - echo "//registry.npmjs.org/:_authToken=9def25e6-5445-410e-99b0-8f4b63570744" >> ~/.npmrc
+      - echo "//registry.npmjs.org/:_authToken=$NPM_PASS" >> ~/.npmrc
       - npm config ls -l 
       - git config --global credential.helper 'store'
       - git config --global user.email "admin+github@@paintzen.com"
