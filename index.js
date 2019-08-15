@@ -2,12 +2,12 @@ const testFunc = () => {
     console.log('testyboi!')
 }
 
-const wat = () => { 
-    console.log('wat!')
+const sup = () => { 
+    console.log('sup!')
 }
 
-const versionC = () => { 
-    console.log('versionC!')
+const asuh = () => { 
+    console.log('asuh!')
 }
 
 const featureD = () => { 
@@ -26,10 +26,6 @@ const g = () => {
     console.log('e')
 }
 
-const asuhps = () => { 
-    console.log('testps')
-}
-
 module.exports = { 
     testFunc, 
     wat, 
@@ -38,5 +34,4 @@ module.exports = {
     e,
     f
     g, 
-    asuhps
 }

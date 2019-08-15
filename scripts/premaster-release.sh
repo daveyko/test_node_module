@@ -6,7 +6,7 @@ tokenQuotes=$(get_token)
 tokenStripSuffixQuotes="${tokenQuotes%\"}"
 token="${tokenStripSuffixQuotes#\"}"
 
-echo "githubaccestoken = $token"
+#echo "githubaccestoken = $token"
 
 export GITHUB_TOKEN=$token
 
