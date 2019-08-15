@@ -20,7 +20,6 @@ phases:
     commands:
       - echo Entered the install phase ...
       - echo "//registry.npmjs.org/:_authToken=$NPM_PASS" >> ~/.npmrc
-      - npm login --registry=http://registry.npmjs.org --scope@paintzen 
       - git config --global credential.helper 'store'
       - git config --global user.email "admin+github@@paintzen.com"
       - git config --global user.name "Paintzen Admin"
@@ -35,6 +34,8 @@ phases:
     commands:
       - echo Entered the build phase...
       - cd $CODEBUILD_SRC_DIR/tempRepo
+      - echo "//registry.npmjs.org/:_authToken=$NPM_PASS" >> ~/.npmrc
+      - cat ~/.npmrc
       - npm install
       - npm run release $BRANCH
       - echo Done!
