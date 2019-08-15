@@ -1,6 +1,6 @@
 {
-  "name": "test_node_module_dk",
-  "version": "165.0.0",
+  "name": "@paintzen/test_node_module_new",
+  "version": "163.1.4-hotfix.1",
   "description": "test",
   "main": "index.js",
   "scripts": {
