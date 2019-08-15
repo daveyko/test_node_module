@@ -9,8 +9,29 @@ const sup = () => {
 const asuh = () => { 
     console.log('asuh!')
 }
+
+const featureD = () => { 
+    console.log('featured')
+}
+
+const e = () => { 
+    console.log('e')
+}
+
+const f = () => { 
+    console.log('f')
+}
+
+const g = () => { 
+    console.log('e')
+}
+
 module.exports = { 
     testFunc, 
-    sup, 
-    asuh
+    wat, 
+    versionC
+    featureD, 
+    e,
+    f
+    g, 
 }
