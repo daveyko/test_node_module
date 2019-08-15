@@ -2,12 +2,12 @@ const testFunc = () => {
     console.log('testyboi!')
 }
 
-const wat = () => { 
-    console.log('wat!')
+const sup = () => { 
+    console.log('sup!')
 }
 
-const versionC = () => { 
-    console.log('versionC!')
+const asuh = () => { 
+    console.log('asuh!')
 }
 
 const featureD = () => { 

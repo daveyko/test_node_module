@@ -9,7 +9,7 @@ env:
   parameter-store:
     GIT_USER: "AS-GIT-USERNAME"
     GIT_PASS: "AS-GIT-SECURE-PASSWORD"
-    NPM_PASS: "AS-NPM-PASSWORD"
+    NPM_PASS: "testNpmToken"
 
 phases:
   install:
