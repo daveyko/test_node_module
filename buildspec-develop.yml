@@ -11,6 +11,7 @@ env:
     GIT_USER: "AS-GIT-USERNAME"
     GIT_PASS: "AS-GIT-SECURE-PASSWORD"
     NPM_PASS: "AS-NPM-PASSWORD"
+    NPM_EMAIL: "AS-NPM-EMAIL"
 
 phases:
   install:
@@ -19,7 +20,7 @@ phases:
     commands:
       - echo Entered the install phase ...
       - echo "//registry.npmjs.org/:_authToken=$NPM_PASS" >> ~/.npmrc
-      - npm config list 
+      - npm config set _auth $NPM_PASS && npm config set always-auth=true && npm config set email=$NPM_EMAIL 
       - git config --global credential.helper 'store'
       - git config --global user.email "admin+github@@paintzen.com"
       - git config --global user.name "Paintzen Admin"
