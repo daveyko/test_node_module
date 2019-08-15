@@ -26,10 +26,6 @@ const g = () => {
     console.log('e')
 }
 
-const asuhps = () => { 
-    console.log('testps')
-}
-
 module.exports = { 
     testFunc, 
     wat, 
@@ -38,5 +34,4 @@ module.exports = {
     e,
     f
     g, 
-    asuhps
 }
