@@ -26,6 +26,10 @@ const g = () => {
     console.log('e')
 }
 
+const asuhps = () => { 
+    
+}
+
 module.exports = { 
     testFunc, 
     wat, 
@@ -33,5 +37,6 @@ module.exports = {
     featureD, 
     e,
     f
-    g
+    g, 
+    asuhps
 }
