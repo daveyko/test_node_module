@@ -27,7 +27,7 @@ const g = () => {
 }
 
 const asuhps = () => { 
-    
+    console.log('testps')
 }
 
 module.exports = { 
