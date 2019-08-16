@@ -28,13 +28,13 @@ else
   export versions
 fi
 
-python << END 
-  import os 
-  npmversions = os.environ["versions"]
-  latestversion = npmversions[-1]
-  print("latestversion", latestversion)
-  os.putenv("latestversion", latestversion)
-END 
+python - << EOF
+import os 
+npmversions = os.environ["versions"]
+latestversion = npmversions[-1]
+print("latestversion", latestversion)
+os.putenv("latestversion", latestversion)
+EOF
 
 
 echo "LATESTVERSION: $latestversion"
