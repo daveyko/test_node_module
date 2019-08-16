@@ -26,16 +26,21 @@ else
   versions=`npm view @paintzen/test_node_module_new versions --json`
   echo "VERSIONS:$versions" 
   export versions
+  export branch
 fi
 
 python - << EOF
 import os 
 import json
 npmversions = os.environ["versions"]
+branch = os.environ["branch"]
 data=json.loads(npmversions)
 latestversion = data[-1]
+for version in reversed(data): 
+  if branch in version: 
+    latestversion=version
 print("latestversion", latestversion)
-os.putenv("latestversion", latestversion)
+os.environ["latestversion"], latestversion)
 EOF
 
 
