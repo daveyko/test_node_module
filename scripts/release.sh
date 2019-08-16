@@ -30,8 +30,10 @@ fi
 
 python - << EOF
 import os 
+import json
 npmversions = os.environ["versions"]
-latestversion = npmversions[-1]
+data=json.loads(npmversions)
+latestversion = data[-1]
 print("latestversion", latestversion)
 os.putenv("latestversion", latestversion)
 EOF
