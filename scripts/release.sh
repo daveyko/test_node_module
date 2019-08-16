@@ -33,6 +33,7 @@ fi
 python - << EOF
 import os 
 import json
+import requests
 npmversions = os.environ["versions"]
 branch = os.environ["branch"]
 data=json.loads(npmversions)
@@ -42,10 +43,8 @@ for version in data[::-1]:
     latestversion=version
     break
 print("latestversion", latestversion)
-os.environ["latestversion"]=str(latestversion)
+r = requests.post("https://hooks.slack.com/services/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", data={'text': latestversion})
+print('slackstatus: ', r.status_code, r.reason)
 EOF
-
-
-echo "LATESTVERSION: $latestversion"
 
 
