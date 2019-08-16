@@ -1,6 +1,6 @@
 {
   "name": "@paintzen/test_node_module_new",
-  "version": "169.1.5-develop.30",
+  "version": "169.1.5-develop.31",
   "description": "test",
   "main": "index.js",
   "scripts": {
@@ -15,10 +15,10 @@
     "release-it": "12.0.1"
   },
   "release-it": {
-    "hooks": { 
+    "hooks": {
       "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
     },
-    "git": { 
+    "git": {
       "requireCleanWorkingDir": false
     },
     "github": {
