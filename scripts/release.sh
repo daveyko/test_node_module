@@ -40,7 +40,7 @@ for version in reversed(data):
   if branch in version: 
     latestversion=version
 print("latestversion", latestversion)
-os.environ["latestversion"], latestversion)
+os.environ["latestversion"] = latestversion
 EOF
 
 
