@@ -35,10 +35,12 @@ import os
 import json
 npmversions = os.environ["versions"]
 branch = os.environ["branch"]
+print("originalversions:", npmversions)
 data=json.loads(npmversions)
+print("originaldata:", data)
 latestversion = data[-1]
-print("reversed: ", reversed(data))
 for version in data[::-1]: 
+  print("version:", version)
   if branch in version: 
     latestversion=version
 print("latestversion", latestversion)
