@@ -13,7 +13,39 @@ token="${tokenStripSuffixQuotes#\"}"
 
 export GITHUB_TOKEN=$token
 
-echo "$(release-it patch --preRelease=$branch --ci)"
+releaseResponse=`release-it patch --preRelease=$branch --ci`
+echo "RELEASE-RESPONSE: $releaseResponse"
+RC=$?
 
+
+if [ "${RC}" != "0" ]
+then
+  echo "RELEASE FAILED"
+else 
+  echo "RELEASE SUCCESS"
+  sleep 5
+  versions=`npm view @paintzen/test_node_module_new versions --json`
+  echo "VERSIONS:$versions" 
+  export versions
+  export branch
+fi
+
+python - << EOF
+import os 
+import json
+npmversions = os.environ["versions"]
+branch = os.environ["branch"]
+data=json.loads(npmversions)
+latestversion = data[-1]
+print("reversed: ", reversed(data))
+for version in data[::-1]: 
+  if branch in version: 
+    latestversion=version
+print("latestversion", latestversion)
+os.environ["latestversion"]=latestversion
+EOF
+
+
+echo "LATESTVERSION: $latestversion"
 
 
