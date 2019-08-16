@@ -13,10 +13,7 @@ token="${tokenStripSuffixQuotes#\"}"
 
 export GITHUB_TOKEN=$token
 
-release() { 
-  echo "$(release-it patch --preRelease=$branch --ci)"
-}
+echo "$(release-it patch --preRelease=$branch --ci)"
 
-releaseResponse=$(release)
 
-echo "RELEASERESPONSE: $releaseResponse"
+
