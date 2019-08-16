@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 #branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
 branch=$1
+repo=$2
 echo "BRANCH: $branch"
-
+echo "REPO: $repo"
 get_token() {
   echo "$(aws ssm get-parameter --name "githubaccesstoken" --query Parameter.Value --region us-east-1)"
 }
@@ -28,7 +29,9 @@ else
   echo "VERSIONS:$versions" 
   export versions
   export branch
+  export repo
 fi
+
 pip install urllib3
 python - << EOF
 import os 
@@ -37,6 +40,7 @@ import urllib3
 http = urllib3.PoolManager()
 npmversions = os.environ["versions"]
 branch = os.environ["branch"]
+repo = os.environ["repo"]
 data=json.loads(npmversions)
 latestversion = data[-1]
 for version in data[::-1]: 
@@ -44,8 +48,9 @@ for version in data[::-1]:
     latestversion=version
     break
 print("latestversion", latestversion)
+slackmessage = repo + '-' + latestversion
 encoded_body = json.dumps({
-  "text": latestversion
+  "text": slackmessage
 })
 r = http.request('POST', 
                 'https://hooks.slack.com/services/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', 
