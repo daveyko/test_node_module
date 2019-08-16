@@ -33,7 +33,8 @@ fi
 python - << EOF
 import os 
 import json
-import requests
+import urllib3
+http = urllib3.PoolManager()
 npmversions = os.environ["versions"]
 branch = os.environ["branch"]
 data=json.loads(npmversions)
@@ -43,8 +44,14 @@ for version in data[::-1]:
     latestversion=version
     break
 print("latestversion", latestversion)
-r = requests.post("https://hooks.slack.com/services/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", data={'text': latestversion})
-print('slackstatus: ', r.status_code, r.reason)
+encoded_body = json.dumps({
+  "text": latestversion
+})
+r = http.request('POST', 
+                'https://hooks.slack.com/services/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', 
+                headers={Content-Type': 'application/json'}, 
+                body=encoded_body)
+print('slackstatus: ', request.status)
 EOF
 
 
