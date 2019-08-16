@@ -15,9 +15,11 @@
     "release-it": "12.0.1"
   },
   "release-it": {
-    "github": {
-      "release": true, 
+    "hooks": { 
       "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
+    },
+    "github": {
+      "release": true
     }
   },
   "dependencies": {
