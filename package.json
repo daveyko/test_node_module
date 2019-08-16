@@ -16,7 +16,8 @@
   },
   "release-it": {
     "github": {
-      "release": true
+      "release": true, 
+      "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
     }
   },
   "dependencies": {
