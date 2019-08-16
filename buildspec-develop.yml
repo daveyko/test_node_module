@@ -34,7 +34,7 @@ phases:
       - echo Entered the build phase...
       - cd $CODEBUILD_SRC_DIR/tempRepo
       - npm install
-      - npm run release $BRANCH
+      - npm run release $BRANCH $GITREPO
       - echo Done!
   post_build:
     commands:
