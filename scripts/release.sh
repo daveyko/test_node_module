@@ -13,10 +13,30 @@ token="${tokenStripSuffixQuotes#\"}"
 
 export GITHUB_TOKEN=$token
 
-release() { 
-  echo "$(release-it patch --preRelease=$branch --ci)"
-}
+releaseResponse=`release-it patch --preRelease=$branch --ci`
+echo "RELEASE-RESPONSE: $releaseResponse"
+RC=$?
 
-releaseResponse=$(release)
 
-echo "RELEASERESPONSE: $releaseResponse"
+if [ "${RC}" != "0" ]
+then
+  echo "RELEASE FAILED"
+else 
+  echo "RELEASE SUCCESS"
+  versions=`npm view @paintzen/test_node_module_new versions --json`
+  echo "VERSIONS:$versions" 
+  export versions
+fi
+
+python << END 
+  import os 
+  npmversions = os.environ["versions"]
+  latestversion = npmversions[-1]
+  print("latestversion", latestversion)
+  os.putenv("latestversion", latestversion)
+END 
+
+
+echo "LATESTVERSION: $latestversion"
+
+
