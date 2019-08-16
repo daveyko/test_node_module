@@ -29,7 +29,7 @@ else
   export versions
   export branch
 fi
-
+pip install urllib3
 python - << EOF
 import os 
 import json
@@ -51,7 +51,7 @@ r = http.request('POST',
                 'https://hooks.slack.com/services/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', 
                 headers={'Content-Type': 'application/json'}, 
                 body=encoded_body)
-print('slackstatus: ', request.status)
+print('slackstatus: ', r.status)
 EOF
 
 
