@@ -32,7 +32,7 @@ else
 fi
 
 pip install urllib3
-python scripts/slack.oy
+python scripts/slack.py
 
 
 
