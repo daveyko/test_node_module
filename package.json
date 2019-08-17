@@ -1,6 +1,6 @@
 {
   "name": "@paintzen/test_node_module_new",
-  "version": "172.0.1-develop.1",
+  "version": "173.0.0",
   "description": "test",
   "main": "index.js",
   "scripts": {
