@@ -62,3 +62,6 @@ fi
 export versions
 export masterRelease
 export packageName
+export branch
+
+python scripts/slack.py
