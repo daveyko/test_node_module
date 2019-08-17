@@ -24,7 +24,7 @@ phases:
       - echo "https://$GIT_USER:$GIT_PASS@github.com" > ~/.git-credentials
       - git clone -b master https://$GIT_USER:$GIT_PASS@$GIT_REPO tempRepo
       - pip install urllib3
-      - sudo apt-get install jq
+      - apt-get install jq
       - echo Done!
   pre_build:
     commands:

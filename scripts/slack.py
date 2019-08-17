@@ -4,7 +4,7 @@ import urllib3
 http = urllib3.PoolManager()
 npmversions = os.environ["versions"]
 branch = os.environ["branch"]
-repo = os.environ["repo"]
+packageName = os.environ["packageName"]
 masterRelease = os.environ["masterRelease"]
 
 if masterRelease == "false":
@@ -17,7 +17,7 @@ if masterRelease == "false":
 else: 
     latestversion=npmversions
 
-slackmessage = repo + '\n' + latestversion
+slackmessage = packageName + '\n' + latestversion
 encoded_body = json.dumps({
 "text": slackmessage
 })

@@ -2,12 +2,10 @@
 #branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
 masterRelease="false"
 branch=$1
-repo=$2
 packageName=`jq -r ".name" package.json`
 
 echo "PACKAGE-NAME: $packageName"
 echo "BRANCH: $branch"
-echo "REPO: $repo"
 
 get_token() {
   echo "$(aws ssm get-parameter --name "githubaccesstoken" --query Parameter.Value --region us-east-1)"
@@ -26,6 +24,7 @@ echo $releaseResponse
 if [ "${RC}" != "0" ]
 then
   echo "RELEASE FAILED"
+  exit 1
 else 
   echo "RELEASE SUCCESS"
   sleep 5
@@ -34,7 +33,7 @@ fi
 
 export versions
 export branch
-export repo
+export packageName
 export masterRelease
 
 python scripts/slack.py
