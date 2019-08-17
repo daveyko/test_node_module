@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 #branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
+masterRelease="false"
 branch=$1
 repo=$2
+packageName=`jq -r ".name" package.json`
+
+echo "PACKAGE-NAME: $packageName"
 echo "BRANCH: $branch"
 echo "REPO: $repo"
+
 get_token() {
   echo "$(aws ssm get-parameter --name "githubaccesstoken" --query Parameter.Value --region us-east-1)"
 }
@@ -15,9 +20,8 @@ token="${tokenStripSuffixQuotes#\"}"
 export GITHUB_TOKEN=$token
 
 releaseResponse=`release-it patch --preRelease=$branch --ci`
-echo "RELEASE-RESPONSE: $releaseResponse"
 RC=$?
-
+echo $releaseResponse
 
 if [ "${RC}" != "0" ]
 then
@@ -25,13 +29,14 @@ then
 else 
   echo "RELEASE SUCCESS"
   sleep 5
-  versions=`npm view @paintzen/test_node_module_new versions --json`
-  export versions
-  export branch
-  export repo
+  versions=`npm view $packageName versions --json`
 fi
 
-pip install urllib3
+export versions
+export branch
+export repo
+export masterRelease
+
 python scripts/slack.py
 
 
