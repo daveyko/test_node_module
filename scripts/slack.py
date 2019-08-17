@@ -18,7 +18,7 @@ if masterRelease == "false":
 else: 
     latestversion=npmversions
 
-slackmessage = branch + '\n' + packageName + ':' + '\n' + latestversion
+slackmessage = branch + '\n' + packageName  + '\n' + latestversion
 encoded_body = json.dumps({
 "text": slackmessage
 })
