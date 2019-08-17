@@ -17,11 +17,13 @@ if masterRelease == "false":
 else: 
     latestversion=npmversions
 
-slackmessage = packageName + '\n' + latestversion
+slackmessage = packageName + ':' + '\n' + latestversion
 encoded_body = json.dumps({
 "text": slackmessage
 })
-r = http.request('POST', 
-                'https://hooks.slack.com/services/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', 
-                headers={'Content-Type': 'application/json'}, 
-                body=encoded_body)
+r = http.request(
+    'POST', 
+    'https://hooks.slack.com/services/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', 
+    headers={'Content-Type': 'application/json'}, 
+    body=encoded_body
+)
