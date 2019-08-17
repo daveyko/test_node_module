@@ -11,9 +11,9 @@ if masterRelease == "false":
     data=json.loads(npmversions)
     latestversion = data[-1]
     for version in data[::-1]: 
-    if branch in version: 
-        latestversion=version
-        break
+        if branch in version: 
+            latestversion=version
+            break
 else: 
     latestversion=npmversions
 
