@@ -1,4 +1,7 @@
 #!/bin/bash
+masterRelease="true"
+packageName=`jq -r ".name" package.json`
+echo "PACKAGE-NAME: $packageName"
 
 getReleaseType() {
   OUT=$(git log -1 --pretty=%B)
@@ -28,15 +31,34 @@ echo "BRANCH: $branch"
 echo "githubaccestoken = $token currentbranch = $branch"
 
 export GITHUB_TOKEN=$token
+
 if [ $branch = "develop" ]
 then 
-    echo "$(release-it major --ci)"
+    releaseResponse=`release-it major --ci`
 elif [ $branch = "prod-support" ]
 then 
-    echo "$(release-it minor --ci)"
+    releaseResponse=`release-it minor --ci`
 elif [ $branch = "hotfix" ]
 then 
-    echo "$(release-it patch --ci)"
+    releaseResponse=`release-it patch --ci`
 else 
     echo "Please enter a valid branch name: develop, production-support, or hotfix"
+    exit 1
 fi
+
+RC=$?
+echo $releaseResponse
+
+if [ "${RC}" != "0" ]
+then
+  echo "RELEASE FAILED"
+  exit 1
+else 
+  echo "RELEASE SUCCESS"
+  sleep 5
+  versions=`npm view $packageName version`
+fi
+
+export versions
+export masterRelease
+export packageName
