@@ -20,7 +20,7 @@ else:
 
 slackmessage = branch + '\n' + packageName  + '\n' + latestversion
 encoded_body = json.dumps({
-"text": slackmessage
+    "text": slackmessage
 })
 r = http.request(
     'POST', 
