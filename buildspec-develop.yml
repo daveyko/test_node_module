@@ -1,5 +1,6 @@
 version: 0.2
 run-as: root
+
 env:
   variables:
     GIT_REPO: "github.com/paintzen/test_node_module.git"
