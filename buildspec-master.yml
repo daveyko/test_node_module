@@ -35,6 +35,7 @@ phases:
       - echo Entered the build phase...
       - cd $CODEBUILD_SRC_DIR/tempRepo
       - npm install
+      - git co .
       - npm run release:master
       - echo Done!
   post_build:

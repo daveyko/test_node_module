@@ -27,7 +27,7 @@ then
   exit 1
 else
   echo "RELEASE SUCCESS"
-  sleep 3
+  sleep 5
   versions=`npm view $packageName versions --json`
 fi
 
