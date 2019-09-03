@@ -1,17 +1,14 @@
 version: 0.2
-
 run-as: root
 
 env:
   variables:
     GIT_REPO: "github.com/paintzen/test_node_module.git"
     BRANCH: "develop"
-
   parameter-store:
     GIT_USER: "AS-GIT-USERNAME"
     GIT_PASS: "AS-GIT-SECURE-PASSWORD"
     NPM_PASS: "testNpmToken"
-
 phases:
   install:
     runtime-versions:

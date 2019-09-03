@@ -1,5 +1,5 @@
 const testFunc = () => { 
-    console.log('testyboi!')
+    console.log('-test-')
 }
 
 module.exports = { 
