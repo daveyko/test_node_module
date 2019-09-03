@@ -1,6 +1,4 @@
-const testFunc = () => { 
-    console.log('-test-')
-}
+const testFunc = () => {}
 
 module.exports = { 
     testFunc, 
